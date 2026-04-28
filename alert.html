@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Болезни томатов</title>
+</head>
+<body>
+    <h3>Загрузите фото листа томата</h3>
+    <input type="file" id="photo">
+    <button onclick="analyze()">Определить болезнь</button>
+    <p id="result"></p>
+
+    <script>
+        async function analyze() {
+            const file = document.getElementById("photo").files[0];
+            if (!file) {
+                document.getElementById("result").innerText = "Выберите файл";
+                return;
+            }
+
+            const form = new FormData();
+            form.append("file", file);
+
+            try {
+                const res = await fetch("/predict", { method: "POST", body: form });
+                const data = await res.json();
+
+                
+                const msg = `${data.класс} (уверенность: ${Math.round(data.уверенность * 100)}%)`;
+                document.getElementById("result").innerText = msg;
+            } catch (err) {
+                document.getElementById("result").innerText = "Ошибка загрузки";
+            }
+        }
+    </script>
+</body>
+</html>
