@@ -1,15 +1,15 @@
-# Веб-сервис диагностики болезней томатов (CV / Deep Learning)
+# Tomato Leaf Disease Diagnosis Web Service (CV / Deep Learning)
 
-Практический пет-проект по распознаванию 10 классов состояний и болезней листьев томатов на базе датасета PlantVillage.
+A practical pet project that recognizes 10 classes of tomato leaf states and diseases based on the PlantVillage dataset.
 
-## Технологический стек
-* **Бэкенд:** Python, FastAPI, Uvicorn
-* **ML/DL:** TensorFlow, Keras, NumPy, PIL (Pillow)
-* **Фронтенд:** HTML5, CSS3, JavaScript (асинхронные запросы Fetch API)
+## Tech Stack
 
-## Структура проекта
-* `tomato.py` — бэкенд-сервер на FastAPI, отвечающий за загрузку картинок, предобработку матриц в NumPy (нормализация /255.0 и расширение размерности под батч) и инференс модели.
-* `alert.html` — аккуратный фронтенд-интерфейс для загрузки фотографий пользователем.
-* `load.py` — скрипт для локальной проверки или загрузки данных.
+- **Backend:** Python, FastAPI, Uvicorn
+- **ML/DL:** TensorFlow, Keras, NumPy, PIL (Pillow)
+- **Frontend:** HTML5, CSS3, JavaScript (asynchronous requests via Fetch API)
 
+## Project Structure
 
+- `tomato.py` — FastAPI backend server responsible for image uploading, matrix preprocessing in NumPy (normalization via /255.0 and dimension expansion for batching), and model inference.
+- `alert.html` — A clean frontend interface for user photo uploads.
+- `load.py` — A script for local verification or data loading.
